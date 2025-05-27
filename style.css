@@ -2644,4 +2644,17 @@ body {
   .nav-menu a {font-size: 0.99em;}
   .scroll-footer {font-size: 0.89em;}
 }
+body {
+  font-family:
+    /* сначала — Montserrat для обычного текста */
+    'Montserrat', 
+
+    /* затем стандартные UI-шрифты системы */
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+
+    /* и в самом конце — шрифты-эмодзи */
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  padding-top: 88px;
+  background: #f7fdf8;
+}
 
