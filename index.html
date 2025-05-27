@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Онлайн автошкола Профі</title>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+  ttq.instance=function(t){for(var e=ttq._i[t]=[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+  ttq.load=function(e,n){
+    var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;
+    ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
+    n=document.createElement("script");
+    n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;
+    e=document.getElementsByTagName("script")[0];
+    e.parentNode.insertBefore(n,e)
+  };
+  ttq.load('D0QV6RRC77U4QOI8ME80');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat',sans-serif; padding-top: 88px; background: #f7fdf8; }
+    /* ===== Шапка ===== */
+    .navbar {
+      position: fixed; left:0; top:0; width:100vw; z-index:1000;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 24px 0 rgba(40,80,80,0.04);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .nav-container { display: flex; align-items:center; justify-content:space-between; padding: 12px 4vw; }
+    .logo-img { height:48px; width:auto; transition:transform .2s;}
+    .logo-link:hover .logo-img {transform: scale(1.07);}
+    .nav-menu { display:flex; gap:24px;}
+    .nav-menu a {
+      font-weight:500; color: #00704a; font-size:1.08rem;
+      padding: 8px 22px; border-radius: 30px;
+      transition: background .2s, color .2s;
+      text-decoration:none;
+    }
+    .nav-menu a:hover, .nav-menu a.active {
+      background: #b0f2c2;
+      color: #122d1d;
+    }
+    .burger {display:none;flex-direction:column;gap:4px;height:36px;width:44px;background:none;border:none;cursor:pointer;}
+    .burger span {display:block;width:28px;height:3px;background:#22aa66;border-radius:3px;transition:.3s;}
+    .burger.active span:nth-child(1){transform:rotate(45deg) translateY(8px);}
+    .burger.active span:nth-child(2){opacity:0;}
+    .burger.active span:nth-child(3){transform:rotate(-45deg) translateY(-8px);}
+    @media (max-width: 900px) {
+      .nav-menu {position:absolute;left:0;right:0;top:72px;flex-direction:column;gap:12px;align-items:center;padding:22px 0;background:rgba(255,255,255,0.98);box-shadow:0 8px 24px 0 rgba(40,80,80,0.07);z-index:99;opacity:0;pointer-events:none;transform:translateY(-44px);transition:.3s;}
+      .nav-menu.active {opacity:1;pointer-events:auto;transform:translateY(0);}
+      .burger{display:flex;}
+      body{padding-top:110px;}
+    }
+    /* ===== Эффекты появления ===== */
+    section, .steps-section, .faq-section { opacity:0; transform:translateY(60px); transition:.8s cubic-bezier(.25,1.3,.7,1);}
+    section.visible, .steps-section.visible, .faq-section.visible {opacity:1;transform:none;}
+    /* ===== Остальные стили (упростил для примера) ===== */
+    .hero{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:36px 0 0 0;}
+    .hero-content{max-width:560px;}
+    .hero .accent{color:#13b172;}
+    .hero-badge{background:#13b172;color:#fff;border-radius:6px;padding:2px 12px;font-size:0.9em;}
+    .main-btn{background:#13b172;color:#fff;border-radius:30px;padding:14px 32px;font-size:1.16em;margin-top:28px;display:inline-block;font-weight:600;text-decoration:none;box-shadow:0 2px 14px 0 #22aa6622;transition:.2s;}
+    .main-btn:hover{background:#09d080;box-shadow:0 4px 20px 0 #22aa6633;}
+    .hero-image img{max-width:410px;width:100%;}
+    /* ... (Добавь остальные свои стили по желанию) ... */
+  </style>
+
+
+</head>
+<body>
+<!-- ====== Навигация ====== -->
+<header class="navbar">
+  <div class="nav-container">
+    <a class="logo-link" href="#hero">
+      <img src="TScZyDQ.png" alt="Автошкола Профі" class="logo-img">
+    </a>
+<nav class="nav-menu" id="menu">
+  <a href="#hero" title="Головна" aria-label="Головна">
+    <span class="nav-icon">
+      <!-- Домик (Home, Material) -->
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M3 10.8V20a1 1 0 0 0 1 1h5v-5h6v5h5a1 1 0 0 0 1-1v-9.2a1 1 0 0 0-.29-.7l-8-7.83a1 1 0 0 0-1.42 0l-8 7.83a1 1 0 0 0-.29.7z" stroke="#13b172" stroke-width="2"/></svg>
+    </span> Головна
+  </a>
+  <a href="#why" title="Переваги" aria-label="Переваги">
+    <span class="nav-icon">
+      <!-- Thumb up (Fluent) -->
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M6 13V7a3 3 0 0 1 3-3h3.8c.4 0 .8.16 1.08.44l4.63 4.54c.28.28.44.68.44 1.08V16a3 3 0 0 1-3 3H8a2 2 0 0 1-2-2z" stroke="#13b172" stroke-width="2"/></svg>
+    </span> Наші переваги
+  </a>
+  <a href="#steps" title="Етапи" aria-label="Етапи">
+    <span class="nav-icon">
+      <!-- Flag (Fluent) -->
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M4 20V4h15l-3 6 3 6H4" stroke="#13b172" stroke-width="2"/></svg>
+    </span> Етапи
+  </a>
+  <a href="#faq" title="Питання" aria-label="Популярні питання">
+    <span class="nav-icon">
+      <!-- Question mark (Fluent) -->
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#13b172" stroke-width="2"/><path d="M12 17v-2" stroke="#13b172" stroke-width="2"/><path d="M12 7a3 3 0 0 1 0 6" stroke="#13b172" stroke-width="2"/></svg>
+    </span> Популярні питання
+  </a>
+  <a href="#reviews" class="nav-link" title="Відгуки" aria-label="Відгуки">
+    <span class="nav-icon">
+      <!-- Star (Material) -->
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l5.46 4.73-1.64 7.03L12 17.27z" stroke="#13b172" stroke-width="2"/></svg>
+    </span> Відгуки
+  </a>
+  <a href="#contact" class="nav-link" title="Зв'язок" aria-label="Зв’язок">
+    <span class="nav-icon">
+      <!-- Telegram (official, modern) -->
+      <svg width="22" height="22" fill="none" viewBox="0 0 240 240"><circle cx="120" cy="120" r="120" fill="#25A3E1"/><path d="M180 69.5L48.5 118c-3.8 1.4-3.7 3.6-.7 4.5l32.6 10.2 12.5 40.7c1.6 4.1 2.7 5.6 5.6 5.6 3 0 4.2-1.2 5.7-4.4l16.9-33.1 35.2 26.1c6.5 3.6 11.2 1.7 12.9-6.1l23.3-87.3c2.3-8.4-3-12.3-9.2-10.2z" fill="#fff"/><path d="M101 168.3c1.1 0 2-0.5 2.7-1.5l15.7-30.8 0.4 0.3 35.2 26.1c4.1 2.3 7.7 1.4 8.8-4.4l23.3-87.3c1.5-5.5-2-8.1-6.1-6.7L54.3 115c-3.6 1.3-3.4 3.1-0.7 4l31.5 9.8 12.3 40.7c0.6 2 1.3 2.8 3.1 2.8z" fill="#d2eefb"/></svg>
+    </span> Зв’язок
+  </a>
+</nav>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ====== Hero ====== -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>
+      <span>Сучасна</span>
+      <span class="accent">онлайн автошкола</span>
+    </h1>
+    <h2>Навчання водіїв у зручному онлайн-форматі — доступно <span class="hero-badge">24/7</span></h2>
+    <p>
+      Освойте правила дорожнього руху дистанційно чи комбінуйте онлайн-уроки з заняттями у класі. Складайте теоретичний іспит з ПДР у СЦ МВС з першої спроби та впевнено відновлюйте свої знання, якщо права отримували давно.
+    </p>
+    <div class="hero-highlight">
+      <b>Більше 90% наших студентів успішно проходять іспит одразу після курсу!</b>
+    </div>
+    <a href="#" class="btn main-btn">Залишити заявку</a>
+  </div>
+  <div class="hero-image">
+    <img src="Hz3tk64.png" alt="Авто і права">
+  </div>
+</section>
+
+<!-- ======= Статистика и призыв ======= -->
+<section class="stats-section" id="offers">
+  <div class="stats-container">
+    <div class="stats-item">
+      <div class="stats-main">
+        <span class="stats-value">5<span class="stats-k">k</span></span>
+      </div>
+      <div class="stats-icons">
+        <span class="heart">❤️</span><span class="heart">❤️</span>
+        <span class="heart">❤️</span><span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+      </div>
+      <div class="stats-label">Задоволених клієнтів</div>
+    </div>
+    <div class="stats-item">
+      <div class="stats-main"><span class="stats-value">4.4</span></div>
+      <div class="stats-icons">
+        <span class="star">★</span><span class="star">★</span>
+        <span class="star">★</span><span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+      <div class="stats-small">1,538 відмінок</div>
+    </div>
+    <div class="stats-item stats-cta">
+      <div class="stats-title">Приєднуйтеся до нас!</div>
+      <a href="#" class="btn orange-btn">Приєднатися</a>
+    </div>
+  </div>
+</section>
+
+<section class="why-section" id="why">
+  <div class="why-container">
+    <h2 class="section-title">Наш сервіс Вам потрібен, якщо</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <span class="why-icon">👜</span>
+        <div class="why-text">Немає можливості регулярно відвідувати заняття в автошколі</div>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">📅</span>
+        <div class="why-text">Стандартний розклад не відповідає вашому способу життя</div>
+      </div>
+
+      <div class="why-item">
+        <span class="why-icon">📍</span>
+        <div class="why-text">У вашому районі відсутня автошкола або не зручно добиратися</div>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🧑</span>
+        <div class="why-text">Давно отримали права й хочете освіжити знання ПДР</div>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">📖</span>
+        <div class="why-text">Бажаєте якісно підготуватися до іспиту в СЦ МВС чи повторити правила</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-section" id="steps">
+  <div class="steps-container">
+    <h2 class="steps-title">Кроки до отримання водійського посвідчення</h2>
+    <div class="steps-graph">
+      <!-- Первая строка: 6 шагов и стрелки -->
+      <div class="steps-row">
+        <div class="step-item">
+          <div class="step-icon"><img src="N2bFjGh.png" alt="Заявка на теорію"></div>
+          <div class="step-label"><b>Заявка на теорію</b></div>
+          <div class="step-desc">Подається в нашу<br>онлайн автошколу</div>
+        </div>
+        <svg class="step-arrow" width="60" height="36" viewBox="0 0 60 36">
+          <path d="M2 30 Q30 5 58 30" stroke="#b6bdcb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+          <defs>
+            <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+              <polygon points="0 0, 7 3.5, 0 7" fill="#b6bdcb"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="step-item">
+          <div class="step-icon"><img src="2CCU1j2.png" alt="Вивчення теорії"></div>
+          <div class="step-label"><b>Вивчення теорії</b></div>
+          <div class="step-desc">Теорія дистанційно через Zoom, на сайті чи в мобільному застосунку</div>
+        </div>
+        <svg class="step-arrow" width="60" height="36" viewBox="0 0 60 36">
+          <path d="M2 30 Q30 5 58 30" stroke="#b6bdcb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+        </svg>
+        <div class="step-item">
+          <div class="step-icon"><img src="N2bFjG1h.png" alt="Іспит з теорії"></div>
+          <div class="step-label"><b>Іспит з теорії</b></div>
+          <div class="step-desc">Теоретичний іспит у ТСЦ </div>
+        </div>
+        <svg class="step-arrow" width="60" height="36" viewBox="0 0 60 36">
+          <path d="M2 30 Q30 5 58 30" stroke="#b6bdcb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+        </svg>
+        <div class="step-item">
+          <div class="step-icon"><img src="N2bFjGh3.png" alt="Заявка на практику"></div>
+          <div class="step-label"><b>Заявка на практику</b></div>
+          <div class="step-desc">Подається в будь-яку автошколу України</div>
+        </div>
+        <svg class="step-arrow" width="60" height="36" viewBox="0 0 60 36">
+          <path d="M2 30 Q30 5 58 30" stroke="#b6bdcb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+        </svg>
+        <div class="step-item">
+          <div class="step-icon"><img src="2i9efFS.png" alt="Практичне водіння"></div>
+          <div class="step-label"><b>Практичне водіння</b></div>
+          <div class="step-desc">Проходження курсу<br>практичного водіння</div>
+        </div>
+        <svg class="step-arrow" width="60" height="36" viewBox="0 0 60 36">
+          <path d="M2 30 Q30 5 58 30" stroke="#b6bdcb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+        </svg>
+        <div class="step-item">
+          <div class="step-icon"><img src="L59d6dI.png" alt="Іспит з водіння"></div>
+          <div class="step-label"><b>Іспит з водіння</b></div>
+          <div class="step-desc">Іспит з водіння в ТСЦ </div>
+        </div>
+      </div>
+      <!-- Вторая строка: центральный шаг -->
+      <div class="steps-center">
+        <div class="step-item">
+          <div class="step-icon"><img src="yo0ybJg.png" alt="Стати водієм"></div>
+          <div class="step-label"><b>Стати водієм</b></div>
+          <div class="step-desc">Отримання посвідчення водія</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <h2 class="section-title">Популярні питання</h2>
+    <!-- FAQ-items - оставляю как было -->
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Чи можна проходити навчання в онлайн автошколі без попереднього досвіду водіння?</button><div class="faq-answer">Так, онлайн автошколи підходять як для новачків, так і для тих, хто хоче відновити свої знання з ПДР.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Чи приймають сертифікати онлайн автошколи в СЦ МВС?</button><div class="faq-answer">Так, сертифікати, отримані після успішного проходження навчання, визнаються Сервісними центрами МВС для складання іспитів.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Скільки часу триває курс теоретичного навчання?</button><div class="faq-answer">Зазвичай курс триває від 1 до 3 місяців, залежно від інтенсивності занять та ваших можливостей.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Чи можливо поєднувати онлайн навчання з роботою або іншими справами?</button><div class="faq-answer">Так, онлайн навчання гнучке та дозволяє вчитися у зручний для вас час.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Як відбуваються іспити після завершення курсу?</button><div class="faq-answer">Після проходження теоретичного курсу ви складатимете іспит у СЦ МВС, де підтвердите свої знання з ПДР.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Чи можу я проходити уроки в зручний для мене час?</button><div class="faq-answer">Так, ви можете навчатися в будь-який час доби, оскільки доступ до онлайн-платформи надається 24/7.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Чи можна отримати підтримку інструктора під час навчання?</button><div class="faq-answer">Так, наша автошкола надає можливість консультуватися з викладачами або інструкторами у разі виникнення питань.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Чи можу я повернутися до матеріалів, якщо не зрозумів тему з першого разу?</button><div class="faq-answer">Так, ви маєте необмежений доступ до навчальних матеріалів, тому можете повторювати їх скільки завгодно.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Чи включає курс онлайн автошколи підготовку до практичного іспиту?</button><div class="faq-answer">Онлайн автошкола зазвичай охоплює лише теоретичну частину, а для практичного водіння вам потрібні додаткові заняття з інструктором.</div></div>
+    <div class="faq-item"><button class="faq-question"><span class="icon">+</span>Які вимоги для початку навчання в онлайн автошколі?</button><div class="faq-answer">Для початку навчання потрібен доступ до інтернету та бажання опанувати правила дорожнього руху.</div></div>
+  </div>
+</section>
+<!-- ====== Відгуки ====== -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <h2 class="section-title">Що кажуть наші студенти</h2>
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-avatar">🚗</div>
+        <p class="review-text">
+          “Дякую автошколі Профі — все зрозуміло, матеріали сучасні, інструктор завжди на звʼязку.”
+        </p>
+        <div class="review-author">
+          <span class="author-name">Олена К.</span>
+          <span class="author-email">o****@gmail.com</span>
+          <span class="author-rating">★★★★★</span>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-avatar">🛣️</div>
+        <p class="review-text">
+          “Навчання у зручний час, платформа працює. Підготовка  була чудова!”
+        </p>
+        <div class="review-author">
+          <span class="author-name">Сергій П.</span>
+          <span class="author-email">s****@yahoo.com</span>
+          <span class="author-rating">★★★★</span>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-avatar">🎓</div>
+        <p class="review-text">
+          “Структуровано, є відео  — усе, що потрібно! Дякую за швидку допомогу.”
+        </p>
+        <div class="review-author">
+          <span class="author-name">Марина Т.</span>
+          <span class="author-email">m****@outlook.com</span>
+          <span class="author-rating">★★★★★</span>
+        </div>
+      </div>
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="review-avatar">⌚</div>
+        <p class="review-text">
+          “Я пройшов курс за два тижні, завдяки онлайн-формату можна вчитися в будь-який час. Рекомендую!”
+        </p>
+        <div class="review-author">
+          <span class="author-name">Ігор В.</span>
+          <span class="author-email">i****@mail.com</span>
+          <span class="author-rating">★★★★</span>
+        </div>
+      </div>
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="review-avatar">💡</div>
+        <p class="review-text">
+          “Після теорії я легко здав іспит. Варто скористатись онлайн форматом.”
+        </p>
+        <div class="review-author">
+          <span class="author-name">Катерина Л.</span>
+          <span class="author-email">k****@gmail.com</span>
+          <span class="author-rating">★★★★★</span>
+        </div>
+      </div>
+      <!-- Review 6 -->
+      <div class="review-card">
+        <div class="review-avatar">🌟</div>
+        <p class="review-text">
+          “Найзручніша платформа з усіх, що я бачив. Постійна підтримка в Telegram, матеріали завжди під рукою.”
+        </p>
+        <div class="review-author">
+          <span class="author-name">Олександр М.</span>
+          <span class="author-email">o****@yahoo.com</span>
+          <span class="author-rating">★★★★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="custom-img-divider">
+  <img src="image.png" alt="Автошкола консультація" />
+</div>
+<!-- ====== Контактний блок ====== -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Є питання? Зв’яжіться з нами!</h2>
+    <p class="contact-subtitle">
+      Наш менеджер готовий проконсультувати вас з усіх деталей — від вибору курсу до реєстрації.
+    </p>
+    <a href="https://t.me/Tolik_tsc" target="_blank" class="btn telegram-btn">
+      <svg width="24" height="24" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M120 0C53.7 0 0 53.7 0 120C0 186.3 53.7 240 120 240C186.3 240 240 186.3 240 120C240 53.7 186.3 0 120 0ZM178 78.9L162.8 182.1C161.4 192.4 155.2 195.3 147.1 190.3L111.8 158.5L96.2 173C94 175.2 92.1 177.1 88 177.1L89.9 142.5L143.7 101.5C145.6 99.9 143.9 98.6 141.7 100.2L81.3 139.5L49.7 129.6C40.1 127 40.4 120.3 51.4 115.4L172.6 70.2C179.5 67 185.6 71.7 178 78.9Z" fill="currentColor"/>
+      </svg>
+      Зв’язатися в Telegram
+    </a>
+  </div>
+</section>
+<div class="scroll-top-wrapper">
+  <a href="#hero" class="scroll-top-btn" aria-label="Повернутися нагору">
+    <span class="arrow">↑</span> Повернутися нагору
+  </a>
+  <p class="scroll-footer">
+  © 2025 «Автошкола Київ». Усі права захищені. |
+  <a href="privacy.html" style="color: #168100; text-decoration: underline;">Політика конфіденційності</a>
+</p>
+
+
+
+<script>
+/* Мобильное меню */
+  const header = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  const burger = document.getElementById('burger');
+  const menu   = document.getElementById('menu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+  });
+/* Плавная прокрутка по якорям */
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const id = this.getAttribute('href');
+    if (id && id.startsWith('#') && document.querySelector(id)) {
+      e.preventDefault();
+      document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+      menu.classList.remove('active');
+      burger.classList.remove('active');
+    }
+  });
+});
+/* Эффект появления секций при прокрутке */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.13 });
+
+// регистрируем секции по id
+['hero','why','steps','offers','faq'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+document.querySelectorAll('section, .steps-section, .faq-section').forEach(sec => observer.observe(sec));
+/* Подсветка активной ссылки */
+const sections = Array.from(document.querySelectorAll('section, .steps-section, .faq-section')).map(s=>({el:s,id:s.id}));
+window.addEventListener('scroll', () => {
+  let scrollPos = window.scrollY + 130;
+  let current = sections.findLast(sec => sec.el.offsetTop < scrollPos && sec.id);
+  document.querySelectorAll('.nav-menu a').forEach(a => {
+    a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+  });
+});
+/* FAQ-аккордеон */
+document.querySelectorAll(".faq-question").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.closest(".faq-item");
+    item.classList.toggle("open");
+  });
+});
+
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.review-card');
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(c => io.observe(c));
+  });
+
+  // Запускаем анимацию появления для контактного блока
+const contactObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+contactObserver.observe(document.querySelector('.contact-section'));
+
+</script>
+<!-- Плавающая Telegram-кнопка -->
+<a href="https://t.me/Tolik_tsc" target="_blank" class="contact-fixed" aria-label="Написати в Telegram">
+  <!-- SVG-иконка Telegram -->
+  <svg width="34" height="34" viewBox="0 0 240 240" fill="none">
+    <circle cx="120" cy="120" r="120" fill="#25A3E1"/>
+    <path d="M180 69.5L48.5 118c-3.8 1.4-3.7 3.6-.7 4.5l32.6 10.2 12.5 40.7c1.6 4.1 2.7 5.6 5.6 5.6 3 0 4.2-1.2 5.7-4.4l16.9-33.1 35.2 26.1c6.5 3.6 11.2 1.7 12.9-6.1l23.3-87.3c2.3-8.4-3-12.3-9.2-10.2z" fill="#fff"/>
+    <path d="M101 168.3c1.1 0 2-0.5 2.7-1.5l15.7-30.8 0.4 0.3 35.2 26.1c4.1 2.3 7.7 1.4 8.8-4.4l23.3-87.3c1.5-5.5-2-8.1-6.1-6.7L54.3 115c-3.6 1.3-3.4 3.1-0.7 4l31.5 9.8 12.3 40.7c0.6 2 1.3 2.8 3.1 2.8z" fill="#d2eefb"/>
+  </svg>
+</a>
+
+</body>
+</html>
