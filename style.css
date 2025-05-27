@@ -2666,4 +2666,13 @@ body {
   padding-top: 88px;
   background: #f7fdf8;
 }
+body {
+  font-family:
+    'Montserrat',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  padding-top: 88px;
+  background: #f7fdf8;
+}
+
 
