@@ -2657,4 +2657,13 @@ body {
   padding-top: 88px;
   background: #f7fdf8;
 }
+body { font-family: 'Montserrat',sans-serif; padding-top: 88px; background: #f7fdf8; }
+body {
+  font-family:
+    'Montserrat',                /* основная гарнитура */
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';  /* для эмоджи */
+  padding-top: 88px;
+  background: #f7fdf8;
+}
 
